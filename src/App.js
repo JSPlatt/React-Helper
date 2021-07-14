@@ -1,24 +1,29 @@
 import './App.css';
+import { useAuth0 } from '@auth0/auth0-react'
 
 function App() {
+
+  const { 
+    loginWithPopup, 
+    loginWithRedirect, 
+    logout, 
+    user, 
+    isAuthenticated,
+    } = useAuth0()
+
   return (
     <div className="App">
       <h1>Auth0 Authentication</h1>
-      <ul
-        style={{
-          maxWidth: '760px',
-          textAlign: 'start',
-          listStyle: 'none',
-          margin: '32px auto',
-          padding: '32px',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          backgroundColor: 'rgb(235, 84,36',
-        }}
-      >
-        <li>✔ Frontend - Reactjs</li>
-        <li>✔  Backend - Nodejs Express API (or any other background)</li>
-      </ul>
+        <ul>
+          <li><button onClick={loginWithPopup}>Login with Popup</button></li>
+          <li><button onClick={loginWithRedirect}>Login with Redirect</button></li>
+          <li><button onClick={logout}>Login with Logout</button></li>
+        </ul>
+        <h3>User is { isAuthenticated? "Logged in" : "Not logged in" }</h3>
+        { isAuthenticated && (
+        <pre style={{textAlign: 'start'}}>{JSON.stringify(user, null, 2)}
+        </pre>
+        )}
     </div>
   );
 }
