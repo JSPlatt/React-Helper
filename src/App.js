@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Auth0 Authentication</h1>
+      <ul
+        style={{
+          maxWidth: '760px',
+          textAlign: 'start',
+          listStyle: 'none',
+          margin: '32px auto',
+          padding: '32px',
+          fontSize: '18px',
+          fontWeight: 'bold',
+          backgroundColor: 'rgb(235, 84,36',
+        }}
+      >
+        <li>✔ Frontend - Reactjs</li>
+        <li>✔  Backend - Nodejs Express API (or any other background)</li>
+      </ul>
     </div>
   );
 }
