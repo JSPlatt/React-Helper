@@ -10,6 +10,7 @@ function App() {
     logout, 
     user, 
     isAuthenticated,
+    getAccessTokenSilently,
     } = useAuth0()
 
     function callApi() {
@@ -19,12 +20,19 @@ function App() {
         .catch(error => console.log (error.message))
     }
 
-    function callProtectedApi() {
-      axios
-        .get("http://localhost:4000/protected")
-        .then(res => console.log(res.data))
-        .catch(error => console.log (error.message))
+    async function callProtectedApi() {
+    try{
+      const token = await getAccessTokenSilently()
+      const response = await axios.get("http://localhost:4000/protected", {
+        headers: {
+          authorization: `Bearer ${token}`
+        }
+      })
+      console.log(response.data)
+    } catch (error) {
+      console.log(error.message)
     }
+  }
 
   return (
     <div className="App">
