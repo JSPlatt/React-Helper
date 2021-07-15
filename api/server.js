@@ -4,6 +4,7 @@
 //     3. axios: npm i axios
 //     4. express-jwt: npm i express-jwt 
 //     5.jwks-rsa: npm i jwks-rsa
+//     6. nodemon: npm i --save-dev nodemon 
 
 const express = require('express')
 const cors = require('cors')
