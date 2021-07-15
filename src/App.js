@@ -17,7 +17,7 @@ function App() {
         <ul>
           <li><button onClick={loginWithPopup}>Login with Popup</button></li>
           <li><button onClick={loginWithRedirect}>Login with Redirect</button></li>
-          <li><button onClick={logout}>Login with Logout</button></li>
+          <li><button onClick={logout}>Logout</button></li>
         </ul>
         <h3>User is { isAuthenticated? "Logged in" : "Not logged in" }</h3>
         { isAuthenticated && (
