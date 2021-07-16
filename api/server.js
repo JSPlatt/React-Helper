@@ -25,7 +25,7 @@ const jwtCheck = jwt({
   audience: 'this is a unique identifier',
   issuer: 'https://helper-react-5.us.auth0.com/',
   algorithms: ['RS256']
-});
+}).unless({path:['/']})
 
 app.use(jwtCheck);
 
