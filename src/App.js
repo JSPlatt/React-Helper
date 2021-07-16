@@ -59,15 +59,19 @@ function App() {
         <div>
           <div>
             {/* Forms */}
+            <h2>Forms</h2>
           </div>
           <div>
             {/* Buttons */}
+            <h2>Buttons</h2>
           </div>
           <div>
             {/* NavBar */}
+            <h2>NavBar</h2>
           </div>
           <div>
             {/* Sidebar */}
+            <h2>Sidebar</h2>
           </div>
         </div>
     </div>
