@@ -33,10 +33,31 @@ app.get('/', (req,res) => {
     res.send('Index Route')
 })
 
-app.get ('/protected', (req, res) => {
-    res.send('Protected Route')
+app.get ('/protected', async (req, res) => {
+try{
+    const accessToken = req.headers.authorization.split(' ')[1]
+    const response = await axios.get('https://helper-react-5.us.auth0.com/userinfo', {
+        headers: {
+            authorization: `Bearer ${accessToken}`
+        }
+    })
+    const userinfo = response.data
+    console.log(userinfo)
+    res.send(userinfo)
+} catch (error){}
+    res.send(error.message)
 })
 
+app.use((req,res,next) => {
+    const error = new Error('Not found')
+    error.status = 404
+    next(error)
+})
 
+app.use((error,req,res,next) => {
+    const status = error.status || 500
+    const message = error.message || 'Internal server error'
+    res.status(status).send(message)
+})
 
 app.listen(4000, () => console.log('Server on port 4000'))
