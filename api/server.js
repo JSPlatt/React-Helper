@@ -45,7 +45,7 @@ try{
     console.log(userinfo)
     res.send(userinfo)
 } catch (error){}
-    res.send(error.message)
+    // res.send(error.message)
 })
 
 app.use((req,res,next) => {

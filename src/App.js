@@ -8,7 +8,7 @@ function App() {
     loginWithPopup, 
     loginWithRedirect, 
     logout, 
-    user, 
+    // user, 
     isAuthenticated,
     getAccessTokenSilently,
     } = useAuth0()
