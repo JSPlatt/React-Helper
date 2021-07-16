@@ -51,10 +51,25 @@ function App() {
                   <button onClick={callProtectedApi}>Call Protected API route</button>
               </li>
           </ul>
-        { isAuthenticated && (
+        {/* { isAuthenticated && (
         <pre style={{textAlign: 'start'}}>{JSON.stringify(user, null, 2)}
         </pre>
-        )}
+        )} */}
+
+        <div>
+          <div>
+            {/* Forms */}
+          </div>
+          <div>
+            {/* Buttons */}
+          </div>
+          <div>
+            {/* NavBar */}
+          </div>
+          <div>
+            {/* Sidebar */}
+          </div>
+        </div>
     </div>
   );
 }
